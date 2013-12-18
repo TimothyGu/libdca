@@ -61,7 +61,7 @@ int main (int argc, char ** argv)
 	}
 	total += 512;
     }
-    if (i == j) {
+    if (i == j && total != 0) {
 	err /= total;
 	square = (square / total) - (err * err);
 	if (square > 0)
@@ -72,9 +72,9 @@ int main (int argc, char ** argv)
 		max, err, square);
 	return ((max > 0.01) || (err > 0.001) || (square > 0.001));
     }
-    if (i < j)
+    if (i < j || i < 512)
 	printf ("%s is too short\n", argv[1]);
-    else
+    if (j < i || j < 512)
 	printf ("%s is too short\n", argv[2]);
     return 1;
 }
