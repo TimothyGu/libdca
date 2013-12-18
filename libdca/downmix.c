@@ -516,6 +516,7 @@ void dca_downmix (sample_t * samples, int acmod, int output, sample_t bias,
     case CONVERT (DCA_3F1R, DCA_MONO):
 	if (slev == 0)
 	    goto mix_3to1;
+        break;
     case CONVERT (DCA_2F2R, DCA_MONO):
 	if (slev == 0)
 	    goto mix_2to1;
